@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int one_Bits(long long int n)
+{
+int c1 = 0;
+	while (n)
+	{
+	n &= (n-1) ;
+	c1++;
+	}
+	return c1;
+}
+
+
+int main()
+{ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+     int t;
+    long long int a,b,opc2;
+    
+cin>>t;
+
+for(int i=0;i<t;i++)
+{
+    cin>>a>>b;
+    if(a==b)
+        cout<<"0"<<endl;
+    else if(b==0)
+        cout<<"-1"<<endl;
+    else if(b==1)
+    {
+        if(a==0)
+            cout<<"1"<<endl;
+        else
+            cout<<"-1"<<endl;
+    }
+    else
+        {
+    opc2=one_Bits(b-1)-one_Bits(a)+1;
+    if(opc2>0)
+    cout<<opc2<<endl;
+    else
+        cout<<"2"<<endl;
+        }
+
+}
+
+    return 0;
+}
